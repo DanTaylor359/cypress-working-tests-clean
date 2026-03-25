@@ -5,3 +5,7 @@ cypress/reports/
 .DS_Store
 .env
 .env.*
+# Mochawesome output
+cypress/reports/*.json
+cypress/reports/*.html
+cypress/reports/assets/
