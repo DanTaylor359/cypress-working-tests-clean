@@ -4,9 +4,12 @@
   "main": "index.js",
   "scripts": {
     "cypress:run": "cypress run",
+    "cypress:run:chrome": "cypress run --browser chrome --headed --spec \"cypress/e2e/Account-Sign-In/Sign-In.cy.js\" && npm run report",
+    "headless": "cypress run --browser chrome --headless",
     "report:merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/report.json",
     "report:generate": "marge cypress/reports/report.json --reportDir cypress/reports",
-    "report": "npm run report:merge && npm run report:generate"
+    "report": "npm run report:merge && npm run report:generate && npm run open:report",
+    "open:report": "sleep 2 && open -a \"Safari\" /Users/danieltaylor/cypress-working-tests/cypress/reports/report.html"
   },
   "repository": {
     "type": "git",
